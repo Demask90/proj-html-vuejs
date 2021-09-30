@@ -31,7 +31,7 @@ const navLinks = [
     },
 ];
 
-const footerLink = [
+const footerLinks = [
     {
         text: 'Careers',
         url: '#',
@@ -64,4 +64,4 @@ const footerLink = [
     },
 ];
 
-export default {navLinks, footerLink};
+export default {navLinks, footerLinks};

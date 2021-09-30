@@ -9,15 +9,17 @@
 
       <div id="quickLinks" class="col-3 ">
         <h4>QUICK LINKS</h4>
+        <lineGradient/>
         <ul>
-          <li class="footerLink" v-for="(link, index) in footerLink" :key="index">
+          <li class="footerLink" v-for="(link, index) in footerLinks" :key="index">
             <a :href="link.url">{{link.text}}</a>
           </li>
         </ul>
       </div>
 
-      <div id="concact" class="col-3 px-5">
+      <div id="contact" class="col-3 px-5">
         <h4>CONTACT</h4>
+        <lineGradient/>
         <div class="my-3">Patricia C. Amedee 4401 Waldeck street Gradivevine Nashville TX 76051</div>
         <div><a href="/">info@yourdomain.com</a></div>
         <div class="my-3">+99 (0) 101 0000 888</div>
@@ -25,22 +27,24 @@
 
       <div id="locationMap" class="col-3 ">
         <h4>LOCATION ON MAP</h4>
+        <lineGradient/>
         <img src="../assets/img/map.png" alt="location Map">
       </div>
 
     </div>
 
-
-
     <div id="footerBottom" class="d-flex justify-content-between align-items-center px-3">
+
       <div class="footerBottomText">
         <i class="far fa-copyright"></i> PHLOX BUSINESS THEME.
       </div>
+
       <ul class="d-flex socials">
-        <li v-for="(social, index) in socials" :key="index" class="socials">
+        <li v-for="(social, index) in socials" :key="index">
           <a class="socialIcon" :href="social.url"><img :src="require(`../assets/img/${social.img}`)" :alt="socials.name"></a>
         </li>
       </ul>
+
     </div>
   </footer>
 </template>
@@ -48,13 +52,15 @@
 <script>
 import Links from '@/assets/data/Links.js'
 import Socials from '@/assets/data/Socials.js'
+import lineGradient from '../components/lineGradient.vue'
 export default {
   name: 'Footer',
   components: {
+    lineGradient
   },
   data() {
     return {
-      footerLink: Links.footerLink,
+      footerLinks: Links.footerLinks,
       socials: Socials.socials,
     }
   },
@@ -81,6 +87,7 @@ footer {
     }
 
     #quickLinks {
+
       ul {
         color: $Text;
         list-style: none;
@@ -98,8 +105,9 @@ footer {
 
     #contact {
       div {
-        font-size: 0.3rem;
+        font-size: 0.9rem;
       }
+
     }
 
     #locationMap {
@@ -110,6 +118,7 @@ footer {
   }
 
   #footerBottom {
+    margin-top: 100px;
     height: 80px;
     background-image: $footerBottom;
 

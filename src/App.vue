@@ -1,5 +1,5 @@
 <template>
-  <div id="app">>
+  <div id="app">  
     <Header/>
     <Main/>
     <Footer/>
@@ -22,6 +22,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../styles/generals.scss";
+@import "./styles/generals.scss";
 
 </style>

@@ -1,20 +1,11 @@
 <template>
-  <main>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-  </main>
+  <div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: ' Main',
-  props: {
-  },
+  name: 'Sections',
   data() {
     return {
 
@@ -28,5 +19,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import '../styles/vars.scss';
 
 </style>

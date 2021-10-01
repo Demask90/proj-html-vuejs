@@ -2,47 +2,38 @@
 @import './vars.scss';
  
 @mixin button($type: '') {
+    button {
+        border: none;
+        padding: 12px 25px;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.3s ease all;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
     @if $type=='BtnGreen' {
         button {
-            border: none;
-            padding: 12px 25px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            cursor: pointer;
             background-image: $buyBtn;
-            transition: 0.3s ease all;
             box-shadow: 0px 0px 15px 0px $shadowButton;
 
             &:hover {
                 background-image: $footerBottom;
                 box-shadow: 0px 0px 15px 0px $shadowButtonDark;
-                
-            }
-            a {
-                text-decoration: none;
-                color: inherit;
             }
         }
     }
     @else if $type=='BtnDark' {
         button {
-            border: none;
-            padding: 12px 25px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            cursor: pointer;
             background-image: $footerBottom;
-            transition: 0.3s ease all;
             box-shadow: 0px 0px 15px 0px $shadowButtonDark;
             
             &:hover {
                 background-image: $buyBtn;
                 box-shadow: 0px 0px 15px 0px $shadowButton;
-                
-            }
-            a {
-                text-decoration: none;
-                color: inherit;
             }
         }
     }

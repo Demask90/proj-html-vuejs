@@ -8,7 +8,7 @@
     </nav>
 
     <div id="SearchBuy" class="d-flex align-items-center">
-      <BtnGradient msg="PURCHASE"/>
+      <b-button pill variant class="button mx-2">PURCHASE</b-button>
       <a class="IconSearch px-2" href="/"><i class="fas fa-search"></i></a>
     </div> 
 
@@ -18,11 +18,9 @@
 <script>
 import Links from '@/assets/data/Links.js'
 import Socials from '@/assets/data/Socials.js'
-import BtnGradient from './BtnGradient.vue'
 export default {
   name: 'Header',
   components: {
-    BtnGradient,
   },
   data() {
     return {
@@ -38,6 +36,7 @@ export default {
 
 <style scoped lang="scss">
 @import '../styles/vars.scss';
+@import "../styles/mixins";
 
 header {
   width: 100%;
@@ -63,6 +62,8 @@ header {
 
   #SearchBuy {
     margin-right: 20px;
+
+    @include button('BtnGreen');
 
     .IconSearch {
       color: $search;

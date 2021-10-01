@@ -1,5 +1,5 @@
 <template>
-     <b-button pill variant class="coloredBtn mx-2">{{msg}}</b-button>
+     <b-button pill variant class="button mx-2">{{msg}}</b-button>
 </template>
 
 <script>
@@ -28,6 +28,7 @@ export default {
         border: none;
         font-size: 0.7rem;
         padding: 12px 25px;
+        border-radius: 20px;
       }
     
 </style>

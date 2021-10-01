@@ -1,17 +1,17 @@
 const socials = [
     {
         name: 'Twitter',
-        img: 'footer-twitter.png',
+        img: 'twitter.png',
         url: '#'
     },
     {
         name: 'Pinterest',
-        img: 'footer-pinterest.png',
+        img: 'pinterest.png',
         url: '#'
     },
     {
         name: 'Facebook',
-        img: 'footer-facebook.png',
+        img: 'facebook.png',
         url: '#'
     },
 ]

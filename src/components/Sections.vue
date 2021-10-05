@@ -106,9 +106,9 @@
       <b-button pill variant class="button align-self-center">READ MORE</b-button>
     </section>
 
-    <section id="feedback">
+    <section id="feedback" >
 
-      <div class="overlayDark d-flex flex-column align-items-center justify-content-center" >
+      <div class="overlayDark d-flex flex-column align-items-center justify-content-center" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="500" data-aos-offset="0">
 
         <i class="fas fa-quote-left changeColor"></i>
 
@@ -170,7 +170,7 @@
 
       </div>
       
-      <ul id="partners" class="d-flex justify-content-around align-items-center" data-aos="fade-down" data-aos-anchor-placement="top-center">
+      <ul id="partners" class="d-flex justify-content-around align-items-center" data-aos="zoom-out" data-aos-anchor-placement="top-center">
         <li class="boxPartner form-check-inline p-0 m-0" v-for="(partner, index) in partners" :key="index"> 
             <img :src="require(`../assets/img/${partner.logo}`)" alt="partner.text">
         </li>

@@ -14,6 +14,9 @@ import bannerTop from './components/bannerTop.vue';
 import Header from './components/Header.vue';
 import Main from './components/Sections.vue';
 import Footer from './components/Footer.vue';
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 export default {
   name: 'App',

@@ -3,7 +3,7 @@
     
     <section id="jumboSlider" class="d-flex align-items-center w-100">
 
-      <div id="jumboText" class="d-flex flex-column justify-content-center">
+      <div id="jumboText" class="d-flex flex-column justify-content-center" data-aos="zoom-in-right">
 
         <div id="experiece">17 YEARS OF EXPERIENCE</div>
         <h1 id="title">We Are a <br> Web Design<span class="changeColor"> Agency</span></h1>
@@ -19,7 +19,7 @@
     
       </div>
       
-      <div id="jumboImg">
+      <div id="jumboImg" data-aos="zoom-in-left">
         <img class="w-100" :src="require(`../assets/img/${jumbo[counterPhoto]}`)" :alt="jumbo[counterPhoto]">
       </div>
 
@@ -31,13 +31,13 @@
 
     <section id="skills" class="d-flex align-items-center">
 
-      <div class="textSkills">
+      <div class="textSkills" data-aos="fade-right">
         <h2>We Are Here To Make Your <span class="changeColor">Website</span> Look More <span class="changeColor">Elegant</span> And Stylish!</h2>
         <lineGradient class="my-5"/>
         <b-button pill variant class="button">VIEW ALL</b-button>
       </div>
 
-      <div class="boxSkills w-100 d-flex flex-wrap">
+      <div class="boxSkills w-100 d-flex flex-wrap" data-aos="fade-left">
         <div v-for="(box, index) in skillsBox" :key="index" class="box p-4">
           <div class="c-preview">
             <div class="SKillsTextBox">
@@ -53,7 +53,7 @@
 
     <section id="ourMission" class="d-flex w-100 align-items-center">
 
-      <div class="imgMission col-6">
+      <div class="imgMission col-6" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
 
         <img id="businessWoman" src="@/assets/img/businesswoman-analysing-document-P8WSNMC-1024x820.jpg" alt="businesswoman analysing document">
         
@@ -66,7 +66,7 @@
         
       </div>
 
-      <div class="textMission col-6">
+      <div class="textMission col-6" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
 
         <h2>learn more about <br> our <span class="changeColor">missions</span></h2>
         <lineGradient class="my-5"/>
@@ -78,22 +78,20 @@
     </section>
 
     <section id="caseHistory" class="d-flex flex-column">
-
+    
       <div id="caseHistoryText" class="d-flex row align-items-center">
-
-        <h2 class="col-6 p-3">
+        <h2 class="col-6 p-3" data-aos="fade-down-right">
           <lineGradient class="my-5"/>
           Our recent <span class="changeColor">web design </span>& some example of past <span class="changeColor">projects</span> 
           <lineGradient class="my-5"/>
         </h2>
 
-        <p class="col-6 p-3 ">
+        <p class="col-6 p-3 " data-aos="fade-down-left">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique animi, impedit repellat, id amet nam ad dolorum repudiandae itaque iure facere? Quod necessitatibus ex saepe et. Repudiandae eveniet perspiciatis ullam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque omnis, autem dignissimos accusamus dolor eaque, explicabo, nemo ut nihil quaerat assumenda labore provident libero! Nobis libero nisi optio pariatur repudiandae.
         </p>
-
       </div>
 
-      <ul id="caseHistoryImg" >
+      <ul id="caseHistoryImg" data-aos="flip-up">
         <li class="boxImg form-check-inline" v-for="(caseHistory, index) in caseHistory" :key="index"> 
           <img :src="require(`../assets/img/${caseHistory.img}`)" alt="caseHistory.text">
           <div class="c-preview"></div>
@@ -110,7 +108,7 @@
 
     <section id="feedback">
 
-      <div class="overlayDark d-flex flex-column align-items-center justify-content-center">
+      <div class="overlayDark d-flex flex-column align-items-center justify-content-center" >
 
         <i class="fas fa-quote-left changeColor"></i>
 
@@ -133,7 +131,8 @@
 
       <lineGradient class="my-5"/>
 
-      <ul id="newsBoxs" class="d-flex flex-row">
+      <ul id="newsBoxs" class="d-flex flex-row" data-aos="fade-down"
+     data-aos-anchor-placement="top-center">
         <li class="boxNews form-check-inline" v-for="(news, index) in newsBlog" :key="index">
 
           <img :src="require(`../assets/img/${news.img}`)" alt="news.text">
@@ -151,19 +150,19 @@
     </section>
 
     <section id="startAboutPartners"> 
-      <div id="startAbout" class="d-flex justify-content-center">
+      <div id="startAbout" class="d-flex justify-content-center" >
 
-        <div class="start box d-flex flex-column align-items-center">
+        <div class="start box d-flex flex-column align-items-center" data-aos="flip-down">
           <div class="TopHint">Are You Ready?</div>
           <h3>Start a New Project</h3>
 
-          <div class="submitStart">
+          <div class="submitStart" >
             <input class="inputStart" type="text" name="mail" placeholder="Enter Your Email Address">
             <button class="btnStart" id="buttonMail">SUBMIT</button>
           </div>
         </div>
 
-        <div class="about box d-flex flex-column align-items-center">
+        <div class="about box d-flex flex-column align-items-center" data-aos="flip-up">
           <div class="TopHint">What Are You Waiting For?</div>
           <h3>Let's Talk About Work</h3>
           <b-button pill variant class="button align-self-center">VIEW ALL POST</b-button>
@@ -212,6 +211,7 @@ export default {
       timer: null,
     }
   },
+
   methods: {
 
     nextPhoto(){
@@ -224,6 +224,7 @@ export default {
 
     startRotation(){
       this.timer = setInterval(this.nextPhoto, 5000);
+      
     },
 
     resetRotation(){
@@ -327,6 +328,9 @@ export default {
     padding: 20px 20px 20px 0;
     @include button('BtnGreen');
     
+    button {
+      width: 20%;
+    }
   }
   .boxSkills {
     .box {
@@ -336,10 +340,12 @@ export default {
       padding: 20px;
       margin: 20px;
       border-radius: 20px;
+      transition: .5s all;
       box-shadow: 0px 0px 15px 0px $shadowButtonDark;
 
       &:hover {
         color:$SocialIcon;
+        transform: scale(1.1);
       }
 
       .c-preview {
@@ -461,20 +467,19 @@ export default {
 
     .boxImg {
       position: relative;
-      width: 25%;
+      width: calc(25% - 10px);
       height: 100%;
-      margin: 0;
+      margin: 5px;
       border-radius: 10px;
-      border: 5px solid transparent;
       transition: 0.2s;
 
       &:hover {
-        border: 0px solid transparent;
-        transition: 0.2s;
+        transform: scale(1.1);
+        z-index: 888;
       }
 
       .c-preview {
-        background: linear-gradient(135deg, #66000000 0%,#66000000 25%,#3D3D3D 50%,#9ACD32 75%,#00D9A6 100%);
+        background: $effect;
         opacity: 0.8;
         background-size: 400% 400%;
         position: absolute;

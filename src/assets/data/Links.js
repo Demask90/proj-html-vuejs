@@ -6,27 +6,27 @@ const navLinks = [
     },
     {
         text: 'ABOUT',
-        url: '#',
+        url: '#skills',
         current: false
     },
     {
         text: 'SERVICES',
-        url: '#',
+        url: '#ourMission',
         current: false
     },
     {
         text: 'SHOWCASE',
-        url: '#',
+        url: '#caseHistory',
         current: false
     },
     {
         text: 'BLOG',
-        url: '#',
+        url: '#blogNews',
         current: false
     },
     {
         text: 'CONTACT',
-        url: '#',
+        url: '#footerTop',
         current: false
     },
 ];

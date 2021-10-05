@@ -1,178 +1,185 @@
 <template>
-<main>
-  
-  <section id="jumboSlider" class="d-flex align-items-center">
+  <main>
+    
+    <section id="jumboSlider" class="d-flex align-items-center w-100">
 
-    <div id="jumboText" class="col-7">
+      <div id="jumboText" class="d-flex flex-column justify-content-center">
 
-      <div id="experiece">17 YEARS OF EXPERIENCE</div>
-      <h1 id="title">We Are a <br> Web Design<span class="changeColor"> Agency</span></h1>
-      <lineGradient class="my-5"/>
-      <p id="agencyText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, et quidem dolore ipsa aliquam harum esse non numquam ab! Aspernatur doloremque eum iure consectetur animi aperiam quos, ex ipsam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus neque repellat eum doloribus corporis. Natus aperiam in quo fuga sunt numquam eius dolor distinctio architecto. Quis odit officia qui ratione.</p>
-      <b-button pill variant class="button my-4">READ MORE</b-button>
-  
-      <ul class="d-flex socialsName">
-        <li v-for="(social, index) in socials" :key="index">
-          <a :href="social.url">{{social.name}}</a>
+        <div id="experiece">17 YEARS OF EXPERIENCE</div>
+        <h1 id="title">We Are a <br> Web Design<span class="changeColor"> Agency</span></h1>
+        <lineGradient class="my-5"/>
+        <p id="agencyText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, et quidem dolore ipsa aliquam harum esse non numquam ab! Aspernatur doloremque eum iure consectetur animi aperiam quos, ex ipsam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus neque repellat eum doloribus corporis. Natus aperiam in quo fuga sunt numquam eius dolor distinctio architecto. Quis odit officia qui ratione.</p>
+        <b-button pill variant class="button my-4">READ MORE</b-button>
+    
+        <ul class="d-flex socialsName">
+          <li v-for="(social, index) in socials" :key="index">
+            <a :href="social.url">{{social.name}}</a>
+          </li>
+        </ul>
+    
+      </div>
+      
+      <div id="jumboImg">
+        <img class="w-100" :src="require(`../assets/img/${jumbo[counterPhoto]}`)" :alt="jumbo[counterPhoto]">
+      </div>
+
+      <ul id="sliderImg" class="d-flex align-items-center slider">
+        <li v-for="(jumbo, index) in jumbo" :key="index" :class="(index == counterPhoto) ? 'active' : 'null' "  class="counter" @click="selectedImg(index)">{{index + 1}}</li>
+      </ul>
+
+    </section>
+
+    <section id="skills" class="d-flex align-items-center">
+
+      <div class="textSkills">
+        <h2>We Are Here To Make Your <span class="changeColor">Website</span> Look More <span class="changeColor">Elegant</span> And Stylish!</h2>
+        <lineGradient class="my-5"/>
+        <b-button pill variant class="button">VIEW ALL</b-button>
+      </div>
+
+      <div class="boxSkills w-100 d-flex flex-wrap">
+        <div v-for="(box, index) in skillsBox" :key="index" class="box p-4">
+          <div class="c-preview">
+            <div class="SKillsTextBox">
+              <img class="boxIcon" :src="require(`../assets/img/${box.icon}`)" alt="box.title">
+              <div class="boxTitle">{{box.title}}</div>
+              <div class="boxOverview">{{box.overview}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+    <section id="ourMission" class="d-flex w-100 align-items-center">
+
+      <div class="imgMission col-6">
+
+        <img id="businessWoman" src="@/assets/img/businesswoman-analysing-document-P8WSNMC-1024x820.jpg" alt="businesswoman analysing document">
+        
+        <div id="ArchitectObs">
+          <div id="Architect">
+            <img src="@/assets/img/busy-architect-PYVKWM4-1024x872.jpg" alt="Busy Architect">
+            <div class="overlay"></div> 
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="textMission col-6">
+
+        <h2>learn more about <br> our <span class="changeColor">missions</span></h2>
+        <lineGradient class="my-5"/>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem quibusdam voluptatibus pariatur natus nobis libero, Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam facere accusamus ipsa. Quas, commodi qui ratione, minima mollitia sed, ullam repellendus necessitatibus similique vero officia quod amet quae quidem? Debitis! ad cum porro maxime temporibus harum vel sit, dolorum vitae dolores nesciunt facere quo sed.</p>
+        <b-button pill variant class="button my-4">READ MORE</b-button>
+      
+      </div>
+
+    </section>
+
+    <section id="caseHistory" class="d-flex flex-column">
+
+      <div id="caseHistoryText" class="d-flex row align-items-center">
+
+        <h2 class="col-6 p-3">
+          <lineGradient class="my-5"/>
+          Our recent <span class="changeColor">web design </span>& some example of past <span class="changeColor">projects</span> 
+          <lineGradient class="my-5"/>
+        </h2>
+
+        <p class="col-6 p-3 ">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique animi, impedit repellat, id amet nam ad dolorum repudiandae itaque iure facere? Quod necessitatibus ex saepe et. Repudiandae eveniet perspiciatis ullam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque omnis, autem dignissimos accusamus dolor eaque, explicabo, nemo ut nihil quaerat assumenda labore provident libero! Nobis libero nisi optio pariatur repudiandae.
+        </p>
+
+      </div>
+
+      <ul id="caseHistoryImg" >
+        <li class="boxImg form-check-inline" v-for="(caseHistory, index) in caseHistory" :key="index"> 
+          <img :src="require(`../assets/img/${caseHistory.img}`)" alt="caseHistory.text">
+          <div class="c-preview"></div>
+          <div class="c-preview__title">
+            <div>{{caseHistory.office}}</div>
+            <h4>{{caseHistory.overview}}</h4>
+          </div>
+          
         </li>
       </ul>
-      <!-- predisporre slide jumbo -->
-      <!-- set interval per scorrere le foto in automatico -->
-      <div id="sliderImg">
-        <ul class="d-flex align-items-center slider">
-          <li class="counter active">01</li>
-          <li class="counter">02</li>
-          <li class="counter">03</li>
-        </ul>
+
+      <b-button pill variant class="button align-self-center">READ MORE</b-button>
+    </section>
+
+    <section id="feedback">
+
+      <div class="overlayDark d-flex flex-column align-items-center justify-content-center">
+
+        <i class="fas fa-quote-left changeColor"></i>
+
+        <h4 class="col-8">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit excepturi voluptatem fuga sint molestiae voluptatibus veniam quia quas repellat, provident sequi illum aliquam dolore natus cupiditate! Repudiandae tempora mollitia deleniti.</h4>
+          
+        <img src="@/assets/img/businesswoman-analysing-document-P8WSNMC-1024x820.jpg" alt="businesswoman analysing document">
+
+        <h5 class="changeColor">LISSA DURBLIN</h5>
+
+        <div class="status">Client</div>
+
       </div>
-    </div>
-    
-    <div id="jumboImg"></div>
-    
-  </section>
 
-  <section id="skills" class="d-flex align-items-center">
-
-    <div class="textSkills col-5">
-      <h2>We Are Here To Make Your <span class="changeColor">Website</span> Look More <span class="changeColor">Elegant</span> And Stylish!</h2>
-      <lineGradient class="my-5"/>
-      <b-button pill variant class="button">VIEW ALL</b-button>
-    </div>
-
-    <div class="boxSkills">
-      <div v-for="(box, index) in skillsBox" :key="index" class="box float-start">
-        <div class="boxIcon">{{box.icon}}</div>
-        <div class="boxTitle">{{box.title}}</div>
-        <div class="boxOverview">{{box.overview}}</div>
-      </div>
-    </div>
-    
-  </section>
-
-  <section id="ourMission" class="d-flex align-items-center">
-
-    <div class="imgMission col-6">
-
-      <img id="businessWoman" src="@/assets/img/businesswoman-analysing-document-P8WSNMC-1024x820.jpg" alt="businesswoman analysing document">
       
-      <div id="ArchitectObs">
-        <div id="Architect">
-          <img src="@/assets/img/busy-architect-PYVKWM4-1024x872.jpg" alt="Busy Architect">
-          <div class="overlay"></div> 
+    </section>
+
+    <section id="blogNews" class="d-flex flex-column align-items-center">
+
+      <h2>Latest News & Our <span class="changeColor">Blog</span></h2>
+
+      <lineGradient class="my-5"/>
+
+      <ul id="newsBoxs" class="d-flex flex-row">
+        <li class="boxNews form-check-inline" v-for="(news, index) in newsBlog" :key="index">
+
+          <img :src="require(`../assets/img/${news.img}`)" alt="news.text">
+
+          <div class="boxInfoNews"> 
+            <div class="dateColor">{{news.date}} <span>by -</span> {{news.author}}</div>
+            <i class="fas fa-circle"></i><span class="boxNewsTitle">{{news.title}}</span>
+          </div>
+          
+        </li>
+      </ul>
+      
+      <b-button pill variant class="button align-self-center">VIEW ALL POST</b-button>
+
+    </section>
+
+    <section id="startAboutPartners"> 
+      <div id="startAbout" class="d-flex justify-content-center">
+
+        <div class="start box d-flex flex-column align-items-center">
+          <div class="TopHint">Are You Ready?</div>
+          <h3>Start a New Project</h3>
+
+          <div class="submitStart">
+            <input class="inputStart" type="text" name="mail" placeholder="Enter Your Email Address">
+            <button class="btnStart" id="buttonMail">SUBMIT</button>
+          </div>
         </div>
+
+        <div class="about box d-flex flex-column align-items-center">
+          <div class="TopHint">What Are You Waiting For?</div>
+          <h3>Let's Talk About Work</h3>
+          <b-button pill variant class="button align-self-center">VIEW ALL POST</b-button>
+        </div>
+
       </div>
       
-    </div>
+      <ul id="partners" class="d-flex justify-content-around align-items-center">
+        <li class="boxPartner form-check-inline p-0 m-0" v-for="(partner, index) in partners" :key="index"> 
+            <img :src="require(`../assets/img/${partner.logo}`)" alt="partner.text">
+        </li>
+      </ul>
 
-    <div class="textMission col-6">
+    </section>
 
-      <h2>learn more about our <span class="colorChange">missions</span></h2>
-      <lineGradient class="my-5"/>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem quibusdam voluptatibus pariatur natus nobis libero, ad cum porro maxime temporibus harum vel sit, dolorum vitae dolores nesciunt facere quo sed.</p>
-      <b-button pill variant class="button my-4">READ MORE</b-button>
-    
-    </div>
-
-  </section>
-
-  <section id="caseHistory" class="d-flex flex-column">
-
-    <div id="caseHistoryText" class="d-flex row align-items-center">
-
-      <h2 class="col-6 p-3">
-        <lineGradient class="my-5"/>
-        Our recent <span class="changeColor">web design </span>& some example of past <span class="changeColor">projects</span> 
-        <lineGradient class="my-5"/>
-      </h2>
-
-      <p class="col-6 p-3 ">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique animi, impedit repellat, id amet nam ad dolorum repudiandae itaque iure facere? Quod necessitatibus ex saepe et. Repudiandae eveniet perspiciatis ullam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque omnis, autem dignissimos accusamus dolor eaque, explicabo, nemo ut nihil quaerat assumenda labore provident libero! Nobis libero nisi optio pariatur repudiandae.
-      </p>
-
-    </div>
-
-    <ul id="caseHistoryImg" >
-      <li class="boxImg form-check-inline" v-for="(caseHistory, index) in caseHistory" :key="index"> 
-          <img :src="require(`../assets/img/${caseHistory.img}`)" alt="caseHistory.text">
-      </li>
-    </ul>
-
-    <b-button pill variant class="button align-self-center">READ MORE</b-button>
-  </section>
-
-  <section id="feedback">
-
-    <div class="overlayDark d-flex flex-column align-items-center justify-content-center">
-
-      <i class="fas fa-quote-left changeColor"></i>
-
-      <h4 class="col-8">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit excepturi voluptatem fuga sint molestiae voluptatibus veniam quia quas repellat, provident sequi illum aliquam dolore natus cupiditate! Repudiandae tempora mollitia deleniti.</h4>
-        
-      <img src="@/assets/img/businesswoman-analysing-document-P8WSNMC-1024x820.jpg" alt="businesswoman analysing document">
-
-      <h5 class="changeColor">LISSA DURBLIN</h5>
-
-      <div class="status">Client</div>
-
-    </div>
-
-    
-  </section>
-
-  <section id="blogNews" class="d-flex flex-column align-items-center">
-
-    <h2>Latest News & Our <span class="changeColor">Blog</span></h2>
-
-    <lineGradient class="my-5"/>
-
-    <ul id="newsBoxs" class="d-flex flex-row">
-      <li class="boxNews form-check-inline" v-for="(news, index) in newsBlog" :key="index">
-
-        <img :src="require(`../assets/img/${news.img}`)" alt="news.text">
-
-        <div class="boxInfoNews"> 
-          <div class="dateColor">{{news.date}} <span>by -</span> {{news.author}}</div>
-          <i class="fas fa-circle"></i><span class="boxNewsTitle">{{news.title}}</span>
-        </div>
-        
-      </li>
-    </ul>
-    
-    <b-button pill variant class="button align-self-center">VIEW ALL POST</b-button>
-
-  </section>
-
-  <section id="startAboutPartners"> 
-    <div id="startAbout" class="d-flex justify-content-center">
-
-      <div class="start box d-flex flex-column align-items-center">
-        <div class="TopHint">Are You Ready?</div>
-        <h3>Start a New Project</h3>
-
-        <div class="submitStart">
-          <input class="inputStart" type="text" name="mail" placeholder="Enter Your Email Address">
-          <button class="btnStart" id="buttonMail">SUBMIT</button>
-        </div>
-      </div>
-
-      <div class="about box d-flex flex-column align-items-center">
-        <div class="TopHint">What Are You Waiting For?</div>
-        <h3>Let's Talk About Work</h3>
-        <b-button pill variant class="button align-self-center">VIEW ALL POST</b-button>
-      </div>
-
-    </div>
-    
-    <ul id="partners" class="d-flex justify-content-around">
-      <li class="boxPartner form-check-inline p-0 m-0" v-for="(partner, index) in partners" :key="index"> 
-          <img :src="require(`../assets/img/${partner.logo}`)" alt="partner.text">
-      </li>
-    </ul>
-
-  </section>
-
-</main>
- 
+  </main>
 </template>
 
 <script>
@@ -182,6 +189,7 @@ import SkillsBox from '@/assets/data/SkillsBox.js'
 import CaseHistory from '@/assets/data/CaseHistory.js'
 import NewsBlog from '@/assets/data/NewsBlog.js'
 import Partners from '@/assets/data/Partners.js'
+
 export default {
   name: 'Sections',
   components: {
@@ -189,16 +197,46 @@ export default {
   },
   data() {
     return {
+      jumbo: [
+        "Group-36-2x.png",
+        "Group-40-2x.png",
+        "Group-35-2x.png",
+      ],
+      counterPhoto: 0,
       socials: Socials.socials,
       skillsBox: SkillsBox.skillsBox,
       caseHistory: CaseHistory.caseHistory,
       newsBlog: NewsBlog.newsBlog,
       partners: Partners.partners,
+      active: false,
+      timer: null,
     }
   },
   methods: {
+
+    nextPhoto(){
+      this.counterPhoto += 1;
+      if(this.counterPhoto == this.jumbo.length)
+        this.counterPhoto = 0;
+        
+      this.resetRotation();
+    },
+
+    startRotation(){
+      this.timer = setInterval(this.nextPhoto, 5000);
+    },
+
+    resetRotation(){
+      clearTimeout(this.timer);
+      this.startRotation();
+    },
+
+    selectedImg(i){
+      this.counterPhoto = i;
+      this.resetRotation();
+    },
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -208,16 +246,16 @@ export default {
 @import "../styles/mixins";
 
 #jumboSlider {
-  width: 100%;
   height: 100vh;
   position: relative;
   margin-bottom: 150px;
   background-color: $backgroundJumbo;
+  overflow: hidden;
 
   #jumboText {
-    max-height: 100vh;
-    position: relative;
-    padding: 100px 0 100px 100px;
+    width: 57%;
+    height: 100%;
+    padding: 0 0 0 100px;
 
     #experiece {
       color: $search;
@@ -225,18 +263,22 @@ export default {
     }
 
     #title {
-      font-weight: 700;
-      font-size: 5rem;
+      font-weight: bold;
+      font-size: 4.5rem;
+      margin-block-start: 0;
+      margin-block-end: 0;
     }
 
     @include button('BtnDark');
-
+    button {
+      max-width: 17%;
+    }
     .socialsName {
       padding: 30px 0 0 0;
       list-style: none;
       li {
         a{
-          color: black;
+          color: $SocialUrl;
           padding-right: 20px;
           text-decoration: none;
           text-transform: uppercase;
@@ -244,47 +286,36 @@ export default {
         }
       }
     }
-
-    #sliderImg {
-      list-style: none;
-      position: absolute;
-      top: 83%;
-      left: 86%;
-      transform: translate(-50%, -50%);
-      background-image: $sliderBackground;
-      padding: 2px;
-      border-radius: 20px;
-
-      .slider {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        .counter {
-          color: $numberPhone;
-          padding: 6px 12px;
-        }
-        .active {
-          padding: 6px 13px;
-          border-radius: 20px;
-          background-image: $activeBackground;
-          color: $SocialIcon;
-        }
-      }
-    }
   }
-
+  
   #jumboImg {
-    width: 60%;
-    height: 100vh;
-    background-image: url("../assets/img/Group-36-2x.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    width: 60%; 
     position: absolute;
-    top: 50%;
+    top:50%;
     left: 80%;
     transform: translate(-50%, -50%);
+  }
+  
+  #sliderImg {
+    list-style: none;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: $sliderBackground;
+    padding: 2px 20px;
+    border-radius: 20px;
+
+    .counter {
+      color: $numberPhone;
+      padding: 2px 20px;
+    }
+    .active {
+      padding: 2px 20px;
+      border-radius: 20px;
+      background-image: $activeBackground;
+      color: $SocialIcon;
+    }
   }
 }
 
@@ -294,44 +325,67 @@ export default {
 
   .textSkills {
     padding: 20px 20px 20px 0;
-    h2 {
-      font-weight: bold;
-      font-size: 2.5rem;
-      
-    }
-
     @include button('BtnGreen');
     
   }
   .boxSkills {
-    
     .box {
+      position: relative;
       width: calc(50% - 40px);
+      height: 300px;
       padding: 20px;
       margin: 20px;
       border-radius: 20px;
       box-shadow: 0px 0px 15px 0px $shadowButtonDark;
 
-      .boxIcon {
-        padding: 30px 10px;
-
+      &:hover {
+        color:$SocialIcon;
       }
 
-      .boxTitle {
-        font-weight: bold;
-        padding: 10px 0;
-      }
+      .c-preview {
+        background: $effect;
+        opacity: 0.8;
+        background-size: 400% 400%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: .5s all;
+        z-index: 2;
 
-      .boxOverview {  
-        font-size: 0.8rem;
+        &:hover {
+          background-position: 100% 100%;
+          border-radius: 20px;
+          display: inline-block;
+        }
+
+        .SKillsTextBox {
+          padding: 30px;
+          z-index: 6;
+
+          .boxIcon {
+            padding: 30px 10px;
+            width: 25%;
+          }
+
+          .boxTitle {
+            font-weight: bold;
+            padding: 10px 0;
+          }
+
+          .boxOverview {  
+            font-size: 0.8rem;
+          }
+        }
       }
     }
   }
-
 }
 
 #ourMission {
-  width: 100%;
   height: 100vh;
   margin: 150px 0;
   padding: 150px 0;
@@ -394,12 +448,6 @@ export default {
   .textMission {
     padding: 50px;
 
-    h2 {
-      font-weight: bold;
-      font-size: 2.5rem;
-      
-    }
-
     @include button('BtnGreen');
   }
 }
@@ -407,30 +455,65 @@ export default {
 #caseHistory {
   width: 90%;
   margin: 0 auto;
-  #caseHistoryText{
-    h2 {
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-  }
-  #caseHistoryImg{
-  padding: 0;
-    .boxImg {
-      width: calc(25% - 10px);
-      margin: 1px 5px;
 
+  #caseHistoryImg{
+    padding: 0;
+
+    .boxImg {
+      position: relative;
+      width: 25%;
+      height: 100%;
+      margin: 0;
+      border-radius: 10px;
+      border: 5px solid transparent;
+      transition: 0.2s;
+
+      &:hover {
+        border: 0px solid transparent;
+        transition: 0.2s;
+      }
+
+      .c-preview {
+        background: linear-gradient(135deg, #66000000 0%,#66000000 25%,#3D3D3D 50%,#9ACD32 75%,#00D9A6 100%);
+        opacity: 0.8;
+        background-size: 400% 400%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        color: #fff;
+        cursor: pointer;
+        transition: .5s all;
+        z-index: 2;
+
+        &:hover {
+          background-position: 100% 100%;
+          border-radius: 10px;
+          display: inline-block;
+        }
+      }
 
       img {
         width: 100%;
         border-radius: 10px;
+        z-index: 1;
+      }
+
+      .c-preview__title {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        color: white;
+        z-index: 3;
       }
     }
   }
   @include button('BtnGreen');
   button {
     margin: 100px 0;
-    }
-    
+  }  
 }
 
 #feedback {
@@ -496,7 +579,7 @@ export default {
           position: absolute;
           width: 80%;
           margin: 0 auto;
-          background-color: white;
+          background-color: $SocialIcon;
           box-shadow:0px 0px 15px 0px $shadowButtonDark;
           border-radius: 5px;
           padding: 20px 30px;
@@ -533,7 +616,7 @@ export default {
   margin: 40px auto;
   
   #startAbout{
-    color: white;
+    color: $SocialIcon;
 
     .box {
       width: calc(100% - 20px);
@@ -564,7 +647,7 @@ export default {
           padding: 15px;
           border-radius: 50px 0 0 50px;
           border: none;
-          color: lightgray;
+          color: $numberPhone;
           font-size: 0.8rem;
         }
 
@@ -573,7 +656,7 @@ export default {
           padding: 15px;
           border-radius: 0 50px 50px 0;
           border: none;
-          color: lightgray;
+          color: $numberPhone;
           font-size: 0.8rem;
         }
       }
@@ -586,8 +669,9 @@ export default {
   }
   #partners {
     background-color: $backgroundPartners;
-    // box-shadow:0px 0px 15px 0px $shadowButtonDark;
-    padding: 100px 0 150px;
+    padding: 100px 0 100px;
+    margin-bottom: 100px;
   }
 }
 </style>
+ 

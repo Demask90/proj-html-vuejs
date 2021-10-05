@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <bannerTop/>  
-    <Header/>
-    <Main/>
-    <Footer/>
+    <div class="container-fluid m-0 p-0">
+      <bannerTop/>  
+      <Header/>
+      <Main/>
+      <Footer/>
+    </div>
   </div>
 </template>
 

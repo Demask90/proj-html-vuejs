@@ -8,7 +8,7 @@
         font-size: 0.7rem;
         text-transform: uppercase;
         cursor: pointer;
-        transition: 0.3s ease all;
+        transition: .5s all;
 
         a {
             text-decoration: none;
@@ -19,6 +19,7 @@
         button {
             background-image: $buyBtn;
             box-shadow: 0px 0px 15px 0px $shadowButton;
+            
 
             &:hover {
                 background-image: $footerBottom;
@@ -38,3 +39,4 @@
         }
     }
 }
+

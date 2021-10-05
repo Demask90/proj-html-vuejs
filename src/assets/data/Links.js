@@ -20,6 +20,11 @@ const navLinks = [
         current: false
     },
     {
+        text: 'FEEDBACK',
+        url: '#feedback',
+        current: false
+    },
+    {
         text: 'BLOG',
         url: '#blogNews',
         current: false

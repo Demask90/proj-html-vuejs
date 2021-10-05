@@ -108,7 +108,7 @@
 
     <section id="feedback" >
 
-      <div class="overlayDark d-flex flex-column align-items-center justify-content-center" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="500" data-aos-offset="0">
+      <div class="overlayDark d-flex flex-column align-items-center justify-content-center" data-aos="fade-zoom-in" data-aos-easing="ease-in-sine" data-aos-delay="100" data-aos-offset="100" >
 
         <i class="fas fa-quote-left changeColor"></i>
 
@@ -211,12 +211,6 @@ export default {
       timer: null,
     }
   },
-  mounted() {
-    setInterval(() => {
-        this.currentImg = this.currentImg + 1;
-    }, 3000);
-  },
-
   methods: {
 
     nextPhoto(){

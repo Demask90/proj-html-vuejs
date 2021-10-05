@@ -5,12 +5,12 @@ const navLinks = [
         current: true
     },
     {
-        text: 'ABOUT',
+        text: 'SERVICES',
         url: '#skills',
         current: false
     },
     {
-        text: 'SERVICES',
+        text: 'ABOUT',
         url: '#ourMission',
         current: false
     },

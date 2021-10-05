@@ -2,12 +2,12 @@
   <footer>
     <div id="footerTop" class="d-flex ">
 
-      <div id="agencyAbout" class="px-5" >
+      <div id="agencyAbout" class="px-5" data-aos="fade-up" data-aos-anchor-placement="top-center">
         <a class="logoAgency" href="/"><img class="pb-3" src="../assets/img/cropped-Group-39-2x.png" alt="Logo Phiox"></a>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos animi consequatur itaque numquam sint? Aliquam alias in fuga! Laborum magni odit dolorum repudiandae in iste minus expedita atque, ad quis.</p>
       </div>
 
-      <div id="quickLinks" class="col-3 ">
+      <div id="quickLinks" class="col-3" data-aos="fade-up" data-aos-anchor-placement="top-center">
         <h4>QUICK LINKS</h4>
         <lineGradient/>
         <ul>
@@ -17,7 +17,7 @@
         </ul>
       </div>
 
-      <div id="contact" class="col-3 px-5">
+      <div id="contact" class="col-3 px-5" data-aos="fade-up" data-aos-anchor-placement="top-center">
         <h4>CONTACT</h4>
         <lineGradient/>
         <div class="my-3">Patricia C. Amedee 4401 Waldeck street Gradivevine Nashville TX 76051</div>
@@ -25,7 +25,7 @@
         <div class="my-3">+99 (0) 101 0000 888</div>
       </div>
 
-      <div id="locationMap" class="col-3 ">
+      <div id="locationMap" class="col-3" data-aos="fade-up" data-aos-anchor-placement="top-center">
         <h4>LOCATION ON MAP</h4>
         <lineGradient/>
         <img src="../assets/img/map.png" alt="location Map">

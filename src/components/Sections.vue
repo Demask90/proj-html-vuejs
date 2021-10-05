@@ -131,7 +131,7 @@
 
       <lineGradient class="my-5"/>
 
-      <ul id="newsBoxs" class="d-flex flex-row" data-aos="fade-down"
+      <ul id="newsBoxs" class="d-flex flex-row" data-aos="fade-down" data-aos-duration="1000"
      data-aos-anchor-placement="top-center">
         <li class="boxNews form-check-inline" v-for="(news, index) in newsBlog" :key="index">
 
@@ -170,7 +170,7 @@
 
       </div>
       
-      <ul id="partners" class="d-flex justify-content-around align-items-center">
+      <ul id="partners" class="d-flex justify-content-around align-items-center" data-aos="fade-down" data-aos-anchor-placement="top-center">
         <li class="boxPartner form-check-inline p-0 m-0" v-for="(partner, index) in partners" :key="index"> 
             <img :src="require(`../assets/img/${partner.logo}`)" alt="partner.text">
         </li>
@@ -210,6 +210,11 @@ export default {
       active: false,
       timer: null,
     }
+  },
+  mounted() {
+    setInterval(() => {
+        this.currentImg = this.currentImg + 1;
+    }, 3000);
   },
 
   methods: {
@@ -322,6 +327,7 @@ export default {
 
 #skills {
   width: 90%;
+  height: 100vh;
   margin: 0 auto;
 
   .textSkills {
